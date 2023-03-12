@@ -12,7 +12,6 @@ export default function Home() {
       </Head>
       <main>
         <h1>Hello World!</h1>
-        <h1>test 123</h1>
       </main>
     </>
   )
