@@ -1,12 +1,12 @@
 import Navbar from "@/components/navbar"
 
-const Menu = () => {
+const Order = () => {
   return (
     <div>
       <Navbar />
-      <div>Menu</div>
+      <div>Order</div>
     </div>
   )
 }
 
-export default Menu
+export default Order

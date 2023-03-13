@@ -1,7 +1,11 @@
+import Navbar from "@/components/navbar"
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div>
+      <Navbar />
+      <div>Login</div>
+    </div>
   )
 }
 

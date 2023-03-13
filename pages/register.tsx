@@ -1,7 +1,11 @@
+import Navbar from "@/components/navbar"
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <div>
+      <Navbar />
+      <div>Register</div>
+    </div>
   )
 }
 

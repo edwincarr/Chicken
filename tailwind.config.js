@@ -10,11 +10,22 @@ module.exports = {
       colors: {
         primary: '#E98A15',
         secondary: '#474A48',
-        neutral: '#EFF6EE',
-        hover: '#e2ded8'
+        neutral: '#fff',
+        hover: '#E2DED8'
       }
     },
   },
   plugins: [require("daisyui")],
-  daisyui: {}
+  daisyui: {
+    themes: [
+      {
+        chicken: {
+          "primary": '#E98A15',
+          "secondary": '#474A48',
+          "neutral": '#fff',
+          "hover": '#E2DED8'
+        }
+      }
+    ]
+  }
 }

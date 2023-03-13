@@ -1,7 +1,11 @@
+import Navbar from "@/components/navbar"
 
 const Locations = () => {
   return (
-    <div>Locations</div>
+    <div>
+      <Navbar />
+      <div>Locations</div>
+    </div>
   )
 }
 
