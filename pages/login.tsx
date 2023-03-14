@@ -4,7 +4,8 @@ const Login = () => {
   return (
     <div>
       <Navbar />
-      <div>Login</div>
+      <div>
+      </div>
     </div>
   )
 }

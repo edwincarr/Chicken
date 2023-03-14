@@ -1,4 +1,3 @@
-// "use client";
 import Link from "next/link"
 import Image from "next/image";
 import Chicken from '../public/chicken-icon.png'
@@ -30,7 +29,7 @@ const Navbar = () => {
     }
   }, [lastScrollY]);
   return (
-    <div className={`navbar bg-neutral text-secondary fixed transition-all duration-500 ${ show ? '' : 'md:-translate-y-96'}`}>
+    <div className={`navbar bg-neutral text-secondary fixed transition-all duration-500 border-b-2 z-50 ${ show ? '' : 'md:-translate-y-96'}`}>
       <div className="navbar-start">
         <Link href='/'>
           <Image src={Chicken} alt='Chicken Shop' className="w-12 p-0 btn btn-ghost min-w-0 hover:bg-transparent"/>
@@ -43,13 +42,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="btn btn-primary font-bold p-2 md:mr-14">
+        <div className="btn btn-primary text-white font-bold p-2 md:mr-14">
           <Link href='/order'>Order Carryout</Link>
         </div>
         <div className="dropdown dropdown-end invisible absolute md:visible md:relative">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar hover:bg-transparent">
             <div className="w-10 rounded-full">
-              <UserCircleIcon className="text-primary"/>
+              <UserCircleIcon className="text-secondary"/>
             </div>
           </label>
           <ul tabIndex={0} className="mt-3 p-2 menu menu-compact dropdown-content bg-neutral rounded-box w-52">
