@@ -4,10 +4,33 @@ import Image from "next/image";
 import Chicken from '../public/chicken-icon.png'
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 import { Bars3Icon } from '@heroicons/react/24/solid'
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
   return (
-    <div className="navbar bg-neutral text-secondary">
+    <div className={`navbar bg-neutral text-secondary fixed transition-all duration-500 ${ show ? '' : 'md:-translate-y-96'}`}>
       <div className="navbar-start">
         <Link href='/'>
           <Image src={Chicken} alt='Chicken Shop' className="w-12 p-0 btn btn-ghost min-w-0 hover:bg-transparent"/>
