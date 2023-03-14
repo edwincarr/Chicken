@@ -62,7 +62,7 @@ const Navbar = () => {
               <Bars3Icon className="text-secondary"/>
             </div>
           </label>
-          <ul tabIndex={0} className="menu mt-3 p-2 dropdown-content w-52">
+          <ul tabIndex={0} className="menu mt-3 p-2 dropdown-content w-52 bg-neutral border-2 rounded-sm">
             <li className="menu-title">
               <span>Navigation</span>
             </li>
