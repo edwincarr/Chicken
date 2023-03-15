@@ -15,7 +15,7 @@ const Register = () => {
             <div className="flex flex-col">
               <div className="self-center text-2xl">or</div>
               <div className="h-screen">
-                <button className="btn border-secondary">Sign In With Google</button>
+                <button className="btn border-secondary bg-base-100">Sign In With Google</button>
               </div>
             </div>
           </div>

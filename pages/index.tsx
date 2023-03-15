@@ -2,9 +2,9 @@ import Navbar from "@/components/navbar"
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-blob bg-cover w-screen aspect-16/9">
       <Navbar />
-      <div>Hello World!</div>
+      <div className="h-screen">hi</div>
     </div>
   )
 }

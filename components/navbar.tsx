@@ -29,7 +29,7 @@ const Navbar = () => {
     }
   }, [lastScrollY]);
   return (
-    <div className={`navbar bg-neutral text-secondary fixed transition-all duration-500 border-b-2 z-50 ${ show ? '' : 'md:-translate-y-96'}`}>
+    <div className={`navbar bg-base-100 text-secondary fixed transition-all duration-500 z-50 ${ show ? '' : 'md:-translate-y-96'}`}>
       <div className="navbar-start">
         <Link href='/'>
           <Image src={Chicken} alt='Chicken Shop' className="w-12 p-0 btn btn-ghost min-w-0 hover:bg-transparent"/>
@@ -51,7 +51,7 @@ const Navbar = () => {
               <UserCircleIcon className="text-secondary"/>
             </div>
           </label>
-          <ul tabIndex={0} className="mt-3 p-2 menu menu-compact dropdown-content bg-neutral rounded-box w-52">
+          <ul tabIndex={0} className="mt-3 p-2 menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
             <li><Link className='hover:bg-hover' href='/login'>Login</Link></li>
             <li><Link className='hover:bg-hover' href='/register'>Register</Link></li>
           </ul>
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Bars3Icon className="text-secondary"/>
             </div>
           </label>
-          <ul tabIndex={0} className="menu mt-3 p-2 dropdown-content w-52 bg-neutral border-2 rounded-sm">
+          <ul tabIndex={0} className="menu mt-3 p-2 dropdown-content w-52 bg-base-100 border-2 rounded-sm">
             <li className="menu-title">
               <span>Navigation</span>
             </li>

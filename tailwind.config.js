@@ -11,7 +11,13 @@ module.exports = {
         primary: '#E98A15',
         secondary: '#474A48',
         neutral: '#fff',
-        hover: '#E2DED8'
+        hover: '#bdbcb1'
+      },
+      backgroundImage: {
+        'blob': "url('../public/blob.svg')"
+      },
+      aspectRatio: {
+        '16/9': '16 / 9'
       }
     },
   },
@@ -23,7 +29,8 @@ module.exports = {
           "primary": '#E98A15',
           "secondary": '#474A48',
           "neutral": '#fff',
-          "hover": '#E2DED8'
+          "hover": '#bdbcb1',
+          "base-100": '#f0efe1'
         }
       }
     ]
