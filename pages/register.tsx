@@ -1,23 +1,19 @@
+import ProviderAuth from "@/components/providerAuth"
 import Navbar from "@/components/navbar"
-import Signup from "@/components/signup"
-import { signInWithPopup } from "firebase/auth"
+import RegisterAuth from "@/components/registerAuth"
 
 const Register = () => {
-  signInWithPopup
   return (
-    <div className="">
+    <div>
       <Navbar />
-      <div className="flex min-h-screen flex-col overflow-hidden tr">
-        <div className="card card-side w-fit translate-y-28 self-center justify-self-center m-auto rounded-md flex flex-col text-secondary ">
+      <div className="bg-blob bg-cover flex min-h-screen flex-col overflow-hidden">
+        <div className="card card-side w-fit self-center justify-self-center m-auto rounded-md flex flex-col text-secondary mt-20">
           <div className="flex flex-col gap-7">
-            <div className="text-4xl translate-x-10">Sign Up</div>
-            <Signup />
-            <div className="flex flex-col">
-              <div className="self-center text-2xl">or</div>
-              <div className="h-screen">
-                <button className="btn border-secondary bg-base-100">Sign In With Google</button>
+            <div className="text-4xl max-md:translate-x-10 text-black">Register</div>
+              <RegisterAuth />
+              <div className="flex flex-col">
+                <ProviderAuth />
               </div>
-            </div>
           </div>
         </div>
       </div>

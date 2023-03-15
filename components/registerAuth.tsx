@@ -1,10 +1,11 @@
-"use client";
+// "use client";
 import { auth } from "@/firebase/firebaseClient"
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import Link from "next/link";
 import { useState } from "react"
 
 
-const Signup = () => {
+const RegisterAuth = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [secondPassword, setSecondPassword] = useState("")
@@ -24,7 +25,7 @@ const Signup = () => {
 
   return (
     <div className="form-control self-center flex flex-col w-screen md:w-fit">
-      <div className="md:flex gap-5 self-center w-96 md:w-auto">
+      <div className="md:flex gap-5 self-center w-87 md:w-auto">
         <div className="flex flex-col px-2">
           <label className="label p-2">
             <span className="label-text">First Name</span>
@@ -52,7 +53,7 @@ const Signup = () => {
         </div>
       </div>
 
-      <div className="md:flex gap-5 self-center md:self-start w-96 md:w-auto">
+      <div className="md:flex gap-5 self-center md:self-start w-87 md:w-auto">
         <div className="flex flex-col px-2">
           <label className="label p-2">
             <span className="label-text">Your Email *</span>
@@ -67,7 +68,7 @@ const Signup = () => {
         </div>
       </div>
 
-      <div className="md:flex gap-5 self-center w-96 md:w-auto">
+      <div className="md:flex gap-5 self-center w-87 md:w-auto">
         <div className="flex flex-col px-2">
           <label className="label p-2">
             <span className="label-text">Your Password *</span>
@@ -94,10 +95,10 @@ const Signup = () => {
           value={secondPassword}/>
         </div>
       </div>
-
-      <button className="btn btn-primary w-80 self-center my-10 text-white" onClick={() => submit()}>Submit</button>
+      <div className="self-center md:self-start md:pl-5 my-5">Already Have an Account? <Link href='/login' className="text-primary">Log in here</Link>.</div>
+      <button className="btn btn-primary w-80 self-center my-5 text-white md:w-96" onClick={() => submit()}>Submit</button>
     </div>
   )
 }
 
-export default Signup
+export default RegisterAuth

@@ -18,6 +18,10 @@ module.exports = {
       },
       aspectRatio: {
         '16/9': '16 / 9'
+      },
+      spacing: {
+        '87': '22rem',
+        '26': '6.2rem'
       }
     },
   },
