@@ -8,7 +8,7 @@ const Login = () => {
       <Navbar />
 
       <div className="bg-blob bg-cover flex min-h-screen flex-col overflow-hidden">
-        <div className="card card-side w-fit self-center justify-self-center m-auto rounded-md text-secondary max-lg:mt-20">
+        <div className="card card-side w-fit self-center m-auto rounded-md text-secondary max-lg:mt-20">
 
           <div className="flex flex-col lg:flex-row gap-7">
 
@@ -17,7 +17,7 @@ const Login = () => {
               <LoginAuth />
             </div>
 
-            <div className="flex flex-col lg:card-body lg:pb-26 justify-center lg:border-l-2 lg:border-base-200 lg:pl-9">
+            <div className="flex flex-col lg:card-body lg:pb-26 justify-center lg:border-l-2 lg:border-base-200 lg:pl-9 max-lg:mb-20">
               <ProviderAuth />
             </div>
 
