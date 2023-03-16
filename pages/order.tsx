@@ -1,3 +1,4 @@
+import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 
 const Order = () => {
@@ -5,6 +6,7 @@ const Order = () => {
     <div>
       <Navbar />
       <div>Order</div>
+      <Footer />
     </div>
   )
 }

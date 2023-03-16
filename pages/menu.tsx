@@ -1,3 +1,4 @@
+import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 
 const Menu = () => {
@@ -5,7 +6,7 @@ const Menu = () => {
     <div>
       <Navbar />
       <div className="h-screen">Menu</div>
-      <div className="h-screen">hi</div>
+      <Footer />
     </div>
   )
 }

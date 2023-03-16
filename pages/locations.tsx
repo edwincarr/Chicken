@@ -1,3 +1,4 @@
+import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 
 const Locations = () => {
@@ -5,6 +6,7 @@ const Locations = () => {
     <div>
       <Navbar />
       <div>Locations</div>
+      <Footer />
     </div>
   )
 }
