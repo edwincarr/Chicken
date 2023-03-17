@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import "firebase/firestore";
+import { collection, getFirestore } from 'firebase/firestore';
 
 const clientCredentials = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,3 +15,8 @@ const clientCredentials = {
 
 const app = initializeApp(clientCredentials);
 export const auth = getAuth(app);
+
+export const db = getFirestore(app);
+
+export const userCollections = collection(db, "users")
+export const locationCollections = collection(db, "locations")

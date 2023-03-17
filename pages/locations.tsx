@@ -6,8 +6,13 @@ const Locations = () => {
   return (
     <div>
       <Navbar />
+      <div className="flex">
       <div className="h-full w-1/2">
         <Map />
+      </div>
+        <div>
+          
+        </div>
       </div>
       <Footer />
     </div>

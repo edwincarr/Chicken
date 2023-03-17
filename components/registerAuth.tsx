@@ -1,5 +1,6 @@
-import { auth } from "@/firebase/firebaseClient"
+import { auth, userCollections } from "@/firebase/firebaseClient"
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import { addDoc } from "firebase/firestore";
 import Link from "next/link";
 import { useState } from "react"
 
@@ -12,14 +13,16 @@ const RegisterAuth = () => {
   const [lastName, setLastName] = useState("")
 
   const submit = async () => {
-    await createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredntial) => {
-      const user = userCredntial.user;
-    })
-    .catch((error) => {
-      const errorCode = error.code
-      const errorMessage = error.message
-    })
+    if(password === secondPassword){
+      await createUserWithEmailAndPassword(auth, email, password)
+      .then(async () => {
+        await addDoc(userCollections, {firstName, lastName, email})
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+      })
+    }
   }
 
   return (
@@ -35,6 +38,7 @@ const RegisterAuth = () => {
           className="input input-bordered input-secondary md:w-80"
           onChange={(e) => setFirstName(e.target.value)}
           value={firstName}
+          required
           />
         </div>
 
@@ -48,6 +52,7 @@ const RegisterAuth = () => {
           className="input input-bordered input-secondary md:w-80"
           onChange={(e) => setLastName(e.target.value)}
           value={lastName}
+          required
           />
         </div>
       </div>

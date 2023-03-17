@@ -1,35 +1,44 @@
-import { useLoadScript, GoogleMap, Marker, MarkerF } from "@react-google-maps/api"
-import { useState } from "react";
+import { useLoadScript, GoogleMap, MarkerF } from "@react-google-maps/api"
+import { useEffect } from "react";
+import useLocationStore from "./store/locationStore";
 
 const containerStyle = {
   width: '50%',
   height: '100%'
 };
 
-const locations = {
-  center: { lat: 0, lng: 0 },
-  antarctica: { lat: -70, lng: -64 },
-  everest: { lat: 27.9881, lng: 86.9250 },
-  bermudaTri: { lat: 25, lng: -71 },
-  outback: { lat: -25, lng: 130 },
-  norway: { lat: 76, lng: 64 },
-  easter: { lat: -27.1, lng: -109.36}
+const center = {
+  lat: 0,
+  lng: 0
 }
 
 const Map = () => {
+  const locationLoad = useLocationStore((state) => state.loadLocations)
+  const locations = useLocationStore((state) => state.locations)
+  const clearLocations = useLocationStore((state) => state.clearLocations)
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string
   })
 
+  useEffect(() => {
+    locationLoad()
+
+    return () => {
+      clearLocations()
+    }
+
+  },[])
+
   return isLoaded ? (
     <div className='h-screen w-screen'>
-      <GoogleMap center={locations.center} zoom={2} mapContainerStyle={containerStyle} mapTypeId="satellite" options={{disableDefaultUI:true, zoomControl:false}}>
-        <MarkerF position={locations.outback} />
-        <MarkerF position={locations.everest} />
-        <MarkerF position={locations.bermudaTri} />
-        <MarkerF position={locations.antarctica} />
-        <MarkerF position={locations.norway} />
-        <MarkerF position={locations.easter} />
+      <GoogleMap center={center} zoom={2} mapContainerStyle={containerStyle} mapTypeId="satellite" options={{disableDefaultUI:true, zoomControl:false}}>
+        {
+          locations.map((location) => {
+            return (
+              <MarkerF position={location.coordinates} />
+            )
+          })
+        }
       </GoogleMap>
     </div>
   ) : <></>
