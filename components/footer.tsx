@@ -10,9 +10,15 @@ const Footer = () => {
         <p>Copyright © 2023 - All right reserved</p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <LinkedIn />
-        <GitHub />
-        <Language />
+        <a href='https://Linkedin.com/in/edwincarr' target='_blank' className='cursor-pointer'>
+          <LinkedIn />
+        </a>
+        <a href='https://github.com/edwincarr' target='_blank' className='cursor-pointer'>
+          <GitHub />
+        </a>
+        <a href='https://edwincarrillo.co' target='_blank' className='cursor-pointer'>
+          <Language />
+        </a>
       </div>
     </footer>
   )
