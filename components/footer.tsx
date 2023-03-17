@@ -4,7 +4,7 @@ import { GitHub, LinkedIn, Language } from '@mui/icons-material'
 
 const Footer = () => {
   return (
-    <footer className="footer items-center p-4 bg-base-200 text-neutral-content">
+    <footer className="footer items-center p-4 bg-base-200 text-neutral-content z-50">
       <div className="items-center grid-flow-col">
         <Image src={Chicken} className='text-primary h-10 w-10' alt='chicken logo'/>
         <p>Copyright © 2023 - All right reserved</p>

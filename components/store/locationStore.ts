@@ -1,14 +1,9 @@
 import { locationCollections } from "@/firebase/firebaseClient";
-import { getDocs } from "firebase/firestore";
+import { DocumentData, getDocs } from "firebase/firestore";
 import { create } from "zustand";
 
-interface location {
-  address: string,
-  coordinates: {lat:number, lng:number}
-}
-
 interface LocationStore {
-  locations: Array<location>,
+  locations: Array<DocumentData>,
   loadLocations: () => void,
   clearLocations: () => void
 }

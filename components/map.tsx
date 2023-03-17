@@ -13,29 +13,19 @@ const center = {
 }
 
 const Map = () => {
-  const locationLoad = useLocationStore((state) => state.loadLocations)
   const locations = useLocationStore((state) => state.locations)
-  const clearLocations = useLocationStore((state) => state.clearLocations)
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string
   })
 
-  useEffect(() => {
-    locationLoad()
-
-    return () => {
-      clearLocations()
-    }
-
-  },[])
-
   return isLoaded ? (
     <div className='h-screen w-screen'>
-      <GoogleMap center={center} zoom={2} mapContainerStyle={containerStyle} mapTypeId="satellite" options={{disableDefaultUI:true, zoomControl:false}}>
+      <GoogleMap center={center} zoom={1.7} mapContainerStyle={containerStyle} mapTypeId="satellite" options={{disableDefaultUI:true, zoomControl:false}}>
         {
-          locations.map((location) => {
+          locations.map((location,idx) => {
             return (
-              <MarkerF position={location.coordinates} />
+              <MarkerF position={location.coordinates} key={idx}/>
             )
           })
         }
