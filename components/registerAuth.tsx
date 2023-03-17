@@ -1,4 +1,3 @@
-// "use client";
 import { auth } from "@/firebase/firebaseClient"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import Link from "next/link";
