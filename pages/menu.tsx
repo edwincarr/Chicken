@@ -5,7 +5,9 @@ const Menu = () => {
   return (
     <div>
       <Navbar />
-      <div className="h-screen">Menu</div>
+      <div className="h-screen">
+        
+      </div>
       <Footer />
     </div>
   )

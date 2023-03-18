@@ -1,5 +1,4 @@
 import { useLoadScript, GoogleMap, MarkerF } from "@react-google-maps/api"
-import { useEffect } from "react";
 import useLocationStore from "./store/locationStore";
 
 const containerStyle = {

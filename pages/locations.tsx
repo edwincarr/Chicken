@@ -1,4 +1,3 @@
-import Footer from "@/components/footer"
 import Map from "@/components/map"
 import Navbar from "@/components/navbar"
 import useLocationStore from "@/components/store/locationStore"
@@ -32,7 +31,7 @@ const Locations = () => {
                     <div className="text-2xl">{location.address}</div>
                     <div>Latitude: {location.coordinates.lat}, Longitude: {location.coordinates.lng}</div>
                   </div>
-                  <div className="btn btn-ghost bg-primary text-neutral ml-auto">Order</div>
+                  <div className="btn btn-ghost bg-primary text-neutral ml-auto font-bold">Order</div>
                 </div>
               )
             })
