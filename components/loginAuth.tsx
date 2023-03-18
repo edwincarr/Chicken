@@ -55,7 +55,7 @@ const LoginAuth = () => {
         </div>
         </div>
       </div>
-      <div className="self-center md:pl-5 my-3">Don't have an account yet? <Link href='/register' className="text-primary">Register here</Link>.</div>
+      <div className="self-center md:pl-5 my-3">Don&apos;t have an account yet? <Link href='/register' className="text-primary">Register here</Link>.</div>
       <button className="btn btn-primary w-80 mt-2 self-center text-white md:w-87" onClick={() => submit()}>Submit</button>
     </div>
   )

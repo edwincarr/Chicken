@@ -13,7 +13,7 @@ const Locations = () => {
     return () => {
       clearLocations()
     }
-  },[])
+  },[loadLocations, clearLocations])
 
   return (
     <div className="overflow-hidden">
