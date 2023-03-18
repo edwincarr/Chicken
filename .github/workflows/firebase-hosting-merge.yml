@@ -18,3 +18,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHICKEN_93A5C }}'
           channelId: live
           projectId: chicken-93a5c
+          env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
