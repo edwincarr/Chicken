@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm i --save --legacy-peer-deps && npm run build
+      - run: npm ci && npm run build
       - name: Enable Firebase Experiments
         run: /usr/local/bin/npx firebase-tools@latest experiments:enable webframeworks
       - uses: FirebaseExtended/action-hosting-deploy@v0
