@@ -13,15 +13,13 @@ const RegisterAuth = () => {
   const [lastName, setLastName] = useState("")
 
   const submit = async () => {
-    if(password === secondPassword){
-      await createUserWithEmailAndPassword(auth, email, password)
-      .then(async () => {
-        await addDoc(userCollections, {firstName, lastName, email})
-      })
-      .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
-      })
+    try{
+      if(password === secondPassword){
+        await createUserWithEmailAndPassword(auth, email, password)
+        await addDoc(userCollections, {displayName: `${firstName} ${lastName}`, email})
+      }
+    }catch(error){
+      console.log(error)
     }
   }
 

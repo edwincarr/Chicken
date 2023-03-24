@@ -1,14 +1,19 @@
+'use client';
 import Link from "next/link"
 import Image from "next/image";
 import Chicken from '../public/chicken-icon.png'
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 import { Bars3Icon } from '@heroicons/react/24/solid'
 import { useState, useEffect } from "react";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from "@/firebase/firebaseClient";
+import { signOut } from "firebase/auth";
+
 
 const Navbar = () => {
+  const [user, loading] = useAuthState(auth)
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -21,7 +26,7 @@ const Navbar = () => {
         setLastScrollY(window.scrollY);
       }
     };
-    
+
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
       return () => {
@@ -29,6 +34,7 @@ const Navbar = () => {
       };
     }
   }, [lastScrollY]);
+
   return (
     <div className={`flex navbar w-screen bg-base-100 text-secondary fixed transition-all duration-500 z-50 ${ show ? '' : 'md:-translate-y-96'}`}>
       <div className=" w-nb-w self-center m-auto">
@@ -53,9 +59,19 @@ const Navbar = () => {
               <UserCircleIcon className="text-primary"/>
             </div>
           </label>
-          <ul tabIndex={0} className="mt-3 p-2 menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-            <li><Link className='hover:bg-hover' href='/login'>Login</Link></li>
-            <li><Link className='hover:bg-hover' href='/register'>Register</Link></li>
+          <ul tabIndex={0} className="mt-3 p-2 menu menu-compact dropdown-content bg-base-100 rounded-md w-52">
+          {!user && (
+              <ul>
+                <li><Link href='/login' className="hover:bg-hover">Login</Link></li>
+                <li><Link href='/register' className="hover:bg-hover">Register</Link></li>
+              </ul>
+            )}
+            {user && (
+              <ul>
+                <li><Link href='/settings' className="hover:bg-hover">Settings</Link></li>
+                <li onClick={() => signOut(auth)}><Link href='' className='hover:bg-hover'>Sign Out</Link></li>
+              </ul>
+            )}
           </ul>
         </div>
         <div className="dropdown dropdown-end" >
@@ -68,13 +84,23 @@ const Navbar = () => {
             <li className="menu-title">
               <span>Navigation</span>
             </li>
-            <li><Link href='/menu'>Menu</Link></li>
-            <li><Link href='/locations'>Locations</Link></li>
+            <li><Link href='/menu' className="hover:bg-hover">Menu</Link></li>
+            <li><Link href='/locations' className="hover:bg-hover">Locations</Link></li>
             <li className="menu-title">
               <span>Profile</span>
             </li>
-            <li><Link href='/login'>Login</Link></li>
-            <li><Link href='/register'>Register</Link></li>
+            {!user && (
+              <ul>
+                <li><Link href='/login' className="hover:bg-hover">Login</Link></li>
+                <li><Link href='/register' className="hover:bg-hover">Register</Link></li>
+              </ul>
+            )}
+            {user && (
+              <ul>
+                <li><Link href='/settings' className="hover:bg-hover">Settings</Link></li>
+                <li onClick={() => signOut(auth)}><Link href='' className='hover:bg-hover'>Sign Out</Link></li>
+              </ul>
+            )}
           </ul>
         </div>
       </div>
