@@ -26,12 +26,12 @@ const Locations = () => {
           {
             locations.map((location,idx) => {
               return (
-                <div key={idx} className="bg-base-100 rounded-lg border border-secondary p-10 flex w-full">
+                <div key={idx} className="bg-stone-700 rounded-lg p-10 flex w-full">
                   <div>
-                    <div className="text-2xl">{location.address}</div>
-                    <div>Latitude: {location.coordinates.lat}, Longitude: {location.coordinates.lng}</div>
+                    <div className="text-2xl text-white">{location.address}</div>
+                    <div className="text-white">Latitude: {location.coordinates.lat}, Longitude: {location.coordinates.lng}</div>
                   </div>
-                  <div className="btn btn-ghost bg-primary text-neutral ml-auto font-bold">Order</div>
+                  <div className="btn btn-ghost bg-primary text-white ml-auto font-bold">Order</div>
                 </div>
               )
             })
