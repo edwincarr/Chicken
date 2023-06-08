@@ -16,14 +16,14 @@ export default function Home() {
       <Navbar />
       <div className="bg-blob bg-cover aspect-16/9 pt-36 overflow-visible">
         <div className="flex flex-row-reverse justify-end self-center max-md:flex-col lg:gap-20 px-p-15">
-          <div className={`text-7xl md:text-8xl w-72 ${jose.className}`}>&quot;Winner Winner Chicken Dinner&quot;</div>
+          <div className={`text-7xl md:text-8xl w-72 ${jose.className} text-stone-700`}>&quot;Winner Winner Chicken Dinner&quot;</div>
           <div>
             <Image src={wing} alt='wing' className="-translate-y-10 w-64"/>
           </div>
         </div>
 
         <div className="flex justify-end max-md:flex-col lg:gap-20 mb-20 lg:pr-28 max-md:justify-start px-p-15">
-          <div className={`text-7xl md:text-8xl w-96 ${jose.className}`}>&quot;Come Try Our Award Winning Chicken&quot;</div>
+          <div className={`text-7xl md:text-8xl w-96 ${jose.className} text-stone-700`}>&quot;Come Try Our Award Winning Chicken&quot;</div>
           <div className="min-w-100">
             <Image src={wing2} alt='wing' className="md:translate-y-20"/>
           </div>
