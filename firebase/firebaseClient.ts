@@ -22,3 +22,4 @@ export const db = getFirestore(app);
 
 export const userCollections = collection(db, "users")
 export const locationCollections = collection(db, "locations")
+export const menuCollections = collection(db, 'menu')
