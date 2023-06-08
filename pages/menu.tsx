@@ -20,7 +20,7 @@ const Menu = () => {
   return (
     <div>
       <Navbar />
-      <div className=" py-20 flex gap-10 flex-wrap justify-center px-20">
+      <div className="p-20 flex gap-10 flex-wrap justify-center">
         {
         menu.map((item,idx) => {
           return (

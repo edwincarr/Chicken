@@ -24,7 +24,7 @@ const Map = () => {
         {
           locations.map((location,idx) => {
             return (
-              <MarkerF position={location.coordinates} key={idx}/>
+              <MarkerF position={location.coordinates} key={idx} options={{icon: {url:'https://www.clker.com/cliparts/L/8/D/F/T/V/orange-pin-maps.svg.thumb.png', scaledSize: new google.maps.Size(20,35)}}}/>
             )
           })
         }
