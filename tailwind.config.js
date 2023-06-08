@@ -10,11 +10,12 @@ module.exports = {
       colors: {
         primary: '#E98A15',
         secondary: '#474A48',
+        burnt: '#8f530c',
         neutral: '#fff',
         hover: '#bdbcb1'
       },
       backgroundImage: {
-        'blob': "url('../public/blob.svg')"
+        'blob': "url('../public/blob.svg')",
       },
       aspectRatio: {
         '16/9': '16 / 9'

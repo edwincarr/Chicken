@@ -1,8 +1,9 @@
+import Image from "next/image"
+import { useEffect } from "react"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 import useMenuStore from "@/components/store/menuStore"
-import Image from "next/image"
-import { useEffect } from "react"
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const Menu = () => {
   const menu = useMenuStore((state) => state.menu)
@@ -19,14 +20,19 @@ const Menu = () => {
   return (
     <div>
       <Navbar />
-      <div className=" py-20 flex gap-10 flex-wrap justify-center">
+      <div className=" py-20 flex gap-10 flex-wrap justify-center px-20">
         {
         menu.map((item,idx) => {
           return (
-            <div key={idx} className="p-10 bg-neutral h-80 w-80 rounded-lg">
-              <h1 className="text-xl font-medium">{item.name}</h1>
-              <Image src={`https://www.wingstop.com/assets/images/flavors/spice-level-${item.spice}.png`} alt={item.spice} width={100} height={0}/>
-              <p>{item.description}</p>
+            <div key={idx} className="p-10 bg-stone-700 h-87 w-80 rounded-lg">
+              <div className="flex">
+                <h1 className="text-xl font-medium text-white pb-3 w-full">{item.name}</h1>
+                <AddShoppingCartIcon className="text-white cursor-pointer hover:text-primary transition-all duration-200 relative top-64 left-2"/>
+              </div>
+              <div className="flex justify-center pb-2 gap-5">
+                <Image src={`https://www.wingstop.com/assets/images/flavors/spice-level-${item.spice}.png`} alt={item.spice} width={100} height={0}/>
+              </div>
+              <p className="text-white">{item.description}</p>
             </div>
           )
         })

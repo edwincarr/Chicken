@@ -2,7 +2,6 @@ import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 import "firebase/firestore";
 import { collection, getFirestore } from 'firebase/firestore';
-import { env } from 'process';
 
 const clientCredentials = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
