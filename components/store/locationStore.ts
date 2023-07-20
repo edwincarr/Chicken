@@ -5,7 +5,9 @@ import { create } from "zustand";
 interface LocationStore {
   locations: Array<DocumentData>,
   loadLocations: () => void,
-  clearLocations: () => void
+  clearLocations: () => void,
+  orderLocation: DocumentData,
+  setLocation: (location: DocumentData) => void
 }
 
 const useLocationStore = create<LocationStore>((set) => ({
@@ -14,7 +16,9 @@ const useLocationStore = create<LocationStore>((set) => ({
     const response = await getDocs(locationCollections)
     set({ locations: response.docs.map((doc) => ({...doc.data()})) })
   },
-  clearLocations: () => set({ locations: []})
+  clearLocations: () => set({ locations: []}),
+  orderLocation: {},
+  setLocation: (location) => set({ orderLocation: location})
 }))
 
 export default useLocationStore

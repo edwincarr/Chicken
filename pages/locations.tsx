@@ -1,12 +1,16 @@
 import Map from "@/components/map"
 import Navbar from "@/components/navbar"
 import useLocationStore from "@/components/store/locationStore"
+import Link from "next/link"
+import test from "node:test"
 import { useEffect } from "react"
 
 const Locations = () => {
   const locations = useLocationStore((state) => state.locations)
   const loadLocations = useLocationStore((state) => state.loadLocations)
   const clearLocations = useLocationStore((state) => state.clearLocations)
+  const setLocation = useLocationStore((state) => state.setLocation)
+  const orderLocation = useLocationStore((state) => state.orderLocation)
 
   useEffect(() => {
     loadLocations()
@@ -31,7 +35,7 @@ const Locations = () => {
                     <div className="text-2xl text-white">{location.address}</div>
                     <div className="text-white">Latitude: {location.coordinates.lat}, Longitude: {location.coordinates.lng}</div>
                   </div>
-                  <div className="btn btn-ghost bg-primary text-white ml-auto font-bold">Order</div>
+                  <div className="btn btn-ghost bg-primary text-white ml-auto font-bold" onClick={() => setLocation(location)}><Link href='/menu'>Order</Link></div>
                 </div>
               )
             })
