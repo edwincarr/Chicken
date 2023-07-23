@@ -22,6 +22,7 @@ const Locations = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
+      <div className="h-10 w-full z-10 mt-16 text-center font-bold text-xl">{orderLocation.address ? orderLocation.address : 'Choose a location to create an order'}</div>
       <div className="flex w-screen overflow-hidden">
         <div className="w-1/2 -translate-x-full transition-all duration-500 lg:translate-x-0">
           <Map />

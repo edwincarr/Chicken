@@ -3,7 +3,6 @@ import { useEffect } from "react"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 import useMenuStore from "@/components/store/menuStore"
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import AddToCart from "@/components/addToCart"
 
 const Menu = () => {
