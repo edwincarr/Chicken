@@ -62,8 +62,6 @@
 
 [![LinkedIn][linkedin-shield]][linkedin-url] - Edwin Lopez-Carrillo - edwincarrillo2@outlook.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
