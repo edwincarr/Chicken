@@ -12,7 +12,7 @@
   <p align="center">
     A fun side project to learn Next.js, Firebase/Firestore, and TailwindCSS. My first time building for both mobile devices
     <br />
-    <a href="chicken-shop-site.vercel.app/">View Demo</a>
+    <a href="https://chicken-shop-site.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/edwincarr/Chicken-Shop-Site/issues">Report Bug</a>
     ·
